@@ -45,6 +45,7 @@ public class Car {
 
     public Car(int seats, int passengers, double fuel){
         this(seats, passengers);
+        this.setFuel(fuel);
     }
     public Car(int seats,int passengers){
         this(seats);
@@ -52,6 +53,5 @@ public class Car {
     }
     public Car(int seats){
         this.setSeats(seats);
-        return;
     }
 }
