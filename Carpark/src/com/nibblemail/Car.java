@@ -9,25 +9,24 @@ public class Car {
     private double mpg;
     
     public Car (int seats, int passengers,double maxFuel, double fuel, double mpg) throws Exception{
-        this(seats, passengers,maxFuel, fuel);
-        this.setMpg(mpg);
-    }
-    public Car(int seats, int passengers, double maxFuel, double fuel) throws Exception{
-        this(seats, passengers, maxFuel);
-        this.refuel(fuel);
-    }
-    public Car(int seats,int passengers, double maxFuel) throws Exception{
-        this(seats, maxFuel);
-        this.setPassengers(passengers);
-    }
-    public Car(int seats, double maxFuel) throws Exception{
-        this.setSeats(seats);
         // No setter as var is final so check goes here
         if(maxFuel < 0) {
             throw new Exception("A Car may not have negative fuel.");
         }
-        else
-            this.MAX_FUEL = maxFuel;
+        this(seats, passengers,maxFuel, fuel);
+        this.setMpg(mpg);
+    }
+    public Car(int seats, int passengers, double maxFuel, double fuel) {
+        this(seats, passengers, maxFuel);
+        this.refuel(fuel);
+    }
+    public Car(int seats,int passengers, double maxFuel) {
+        this(seats, maxFuel);
+        this.setPassengers(passengers);
+    }
+    public Car(int seats, double maxFuel) {
+        this.setSeats(seats);
+        this.MAX_FUEL = maxFuel;
     }
 
     public double getMaxFuel() {
